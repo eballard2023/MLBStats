@@ -123,7 +123,7 @@ app.route("/trackplayers/:playerName/:selectedStats")
   .get(async (req, res) => {
     try {
       const tournamentId = 11205; 
-      const seasonId = 29168; 
+      const seasonId = 46674; 
     
       const playerName = req.params.playerName;
       const selectedStats = req.params.selectedStats.split(",");
@@ -145,7 +145,7 @@ app.route("/trackplayers/:playerName/:selectedStats")
   .get(async (req, res) => {
     try {
       const tournamentId = 11205; 
-      const seasonId = 29168; 
+      const seasonId = 46674; 
     
       const playerName = req.params.playerName;
       const selectedStats = req.query.selectedStats || []; 
@@ -171,7 +171,7 @@ app.route("/trackplayers/:playerName/:selectedStats")
                 const playerName = player.player;
                 const specificStats = player.selectedStats;
                 const tournamentId = 11205; 
-                const seasonId = 29168; 
+                const seasonId = 46674; 
 
                 const playerID = await fetchPlayerId(playerName);
                 const playerStats = await fetchMLBPlayerData(playerID, tournamentId, seasonId);
