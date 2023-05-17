@@ -219,15 +219,14 @@
            
         </form>
         <br>
-        <form action = "/allPlayers" method = "POST">
-            
-            <label for ="allPlayers">To view all Players: </label>
-            <button type = "submit" class="btn btn-primary">View All Players</button>
-
-            
-
-        
-    </form>
+        <% if (players <= 6) { %>
+            <form action="/allPlayers" method="POST">
+                <label for="allPlayers">To view all Players: </label>
+                <button type="submit" class="btn btn-primary">View All Players</button>
+            </form>
+            <br>
+            <% } %>
+    
     <br>
         <form action = "/removeallPlayers" method = "POST">
             <label for ="removeAllPlayers">Remove All Players from Table: </label>
