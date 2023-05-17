@@ -107,7 +107,7 @@ app.get("/", async (req, res) => {
   .post(async (req, res) => {
     const playerName = req.body.playerName; 
     const selectedStats = Object.keys(req.body).filter(key => key !== "playerName");
-
+    selectedStats = selectedStats.length > 0 ? selectedStats : ["hittingObp", "hittingAvg", "hittingOps"];
     
 
     await addPlayer(playerName, selectedStats); 
@@ -145,8 +145,8 @@ app.route("/trackplayers/:playerName/:selectedStats")
       const seasonId = 29168; 
     
       const playerName = req.params.playerName;
-      let selectedStats = req.query.selectedStats || []; 
-      selectedStats = selectedStats.length > 0 ? selectedStats : ["hittingObp", "hittingAvg", "hittingOps"]; // Use default stats if no stats are selected
+      const selectedStats = req.query.selectedStats || []; 
+      selectedStats = selectedStats.length > 0 ? selectedStats : ["hittingObp", "hittingAvg", "hittingOps"]; 
       const playerID = await fetchPlayerId(playerName);
       
       const playerData = await fetchMLBPlayerData(playerID, tournamentId, seasonId);
