@@ -83,7 +83,7 @@ const fetchPlayerId = async (term) => {
 
     try {
         const response = await axios(url, options);
-        // Assuming the player is always the first result
+  
         return response.data.results[0].entity.id; 
     } catch (error) {
         console.error(error);
@@ -112,8 +112,8 @@ app.get("/", async (req, res) => {
     }
     
     
+    
 
-    await addPlayer(playerName, selectedStats); 
     
 
     res.redirect(`/trackplayers/${playerName}/${selectedStats}`);
@@ -132,7 +132,7 @@ app.route("/trackplayers/:playerName/:selectedStats")
       const playerData = await fetchMLBPlayerData(playerID, tournamentId, seasonId);
       
       
-      
+      await addPlayer(playerName, selectedStats); 
       res.render("trackplayers", {playerData, playerName, selectedStats });
       
     } catch (error) {
@@ -153,7 +153,7 @@ app.route("/trackplayers/:playerName/:selectedStats")
       const playerID = await fetchPlayerId(playerName);
       
       const playerData = await fetchMLBPlayerData(playerID, tournamentId, seasonId);
-      
+      await addPlayer(playerName, selectedStats); 
       res.render("trackplayers", { playerData, playerName, selectedStats });
     } catch (error) {
       console.error(error);
