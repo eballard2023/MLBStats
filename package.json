@@ -1,19 +1,17 @@
 {
-  "name": "mlbstats",
+  "name": "finalproj",
   "version": "1.0.0",
-  "description": "tracks mlb players stats",
+  "description": "",
   "main": "headServer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eballard2023/MLBStats.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eballard2023/MLBStats/issues"
-  },
-  "homepage": "https://github.com/eballard2023/MLBStats#readme"
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
 }
