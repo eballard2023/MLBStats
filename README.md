@@ -12,4 +12,10 @@ to retrieve the player's specific statistics. If no statistics are selected, the
 API Links:
 https://rapidapi.com/fluis.lacasse/api/baseballapi
 
+Hosted on Render:
+https://mlbstats.onrender.com/
+
+Youtube Demo:
+https://www.youtube.com/watch?v=HjT4IVrKv3s
+
 
