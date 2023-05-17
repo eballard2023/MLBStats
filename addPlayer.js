@@ -77,5 +77,4 @@ async function fetchAllPlayers() {
   
   module.exports = { addPlayer, fetchAllPlayers, getPlayerCount };
   
-  
-  module.exports = { addPlayer, fetchAllPlayers ,getPlayerCount};
+
