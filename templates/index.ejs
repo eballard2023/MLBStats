@@ -225,7 +225,12 @@
                 <button type="submit" class="btn btn-primary">View All Players</button>
             </form>
             <br>
-            <% } %>
+        <% } else { %>
+            <div class="alert alert-danger mt-3">
+                Please remove players from the player list. The API limit is 6 requests per second and you have exceeded the limit.
+            </div>
+        <% } %>
+        
     
     <br>
         <form action = "/removeallPlayers" method = "POST">
