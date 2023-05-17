@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const axios = require("axios");
-app.use(express.static('public'));
+app.use(express.static('templates'));
 
 const { addPlayer, fetchAllPlayers, getPlayerCount } = require("./addPlayer.js");
 const {removeAll} = require("./removeEntries.js");
