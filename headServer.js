@@ -57,7 +57,7 @@ const fetchMLBPlayerData = async (playerId, tournamentId, seasonId) => {
   
     try {
       const response = await axios(url, options);
-      const playerData = response.data; // axios returns data inside a data property
+      const playerData = response.data; 
   
       if (!playerData) {
         throw new Error('Player not found');
@@ -106,8 +106,11 @@ app.get("/", async (req, res) => {
   app.route("/trackplayers")
   .post(async (req, res) => {
     const playerName = req.body.playerName; 
-    const selectedStats = Object.keys(req.body).filter(key => key !== "playerName");
-    selectedStats = selectedStats.length > 0 ? selectedStats : ["hittingObp", "hittingAvg", "hittingOps"];
+    let selectedStats = Object.keys(req.body).filter(key => key !== "playerName");
+    if (selectedStats.length == 0){
+      selectedStats = ["hittingObp", "hittingAvg", "hittingOps"];
+    }
+    
     
 
     await addPlayer(playerName, selectedStats); 
@@ -167,8 +170,8 @@ app.route("/trackplayers/:playerName/:selectedStats")
             allPlayers.map(async (player) => {
                 const playerName = player.player;
                 const specificStats = player.selectedStats;
-                const tournamentId = 11205; // Replace with actual tournament ID
-                const seasonId = 29168; // Replace with actual season ID
+                const tournamentId = 11205; 
+                const seasonId = 29168; 
 
                 const playerID = await fetchPlayerId(playerName);
                 const playerStats = await fetchMLBPlayerData(playerID, tournamentId, seasonId);
