@@ -1,0 +1,19 @@
+{
+  "name": "mlbstats",
+  "version": "1.0.0",
+  "description": "tracks mlb players stats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eballard2023/MLBStats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eballard2023/MLBStats/issues"
+  },
+  "homepage": "https://github.com/eballard2023/MLBStats#readme"
+}
