@@ -2,7 +2,7 @@
   "name": "mlbstats",
   "version": "1.0.0",
   "description": "tracks mlb players stats",
-  "main": "index.js",
+  "main": "headServer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
